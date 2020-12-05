@@ -90,7 +90,7 @@ myApp.controller('HomeController', ["$scope", "$state", "$http", "sampleFactory"
           // this callback will be called asynchronously
           // when the response is available
           console.log('get ok');
-          $scope.students = response.data;
+         
       }, function errorCallback(response) {
        // response.setHeader("Access-Control-Allow-Origin", "*");
    
