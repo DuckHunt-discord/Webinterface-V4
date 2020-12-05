@@ -1,0 +1,41 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "firstname": "louis",
+      "name": "gentil"
+    },
+    {
+      "id": 2,
+      "firstname": "amina",
+      "name": "smart"
+    },
+    {
+      "id": 3,
+      "firstname": "jean",
+      "name": "dupond"
+    },
+    {
+      "firstname": "jean-michel",
+      "name": "dubois",
+      "id": 4
+    }
+  ],
+  "professors": [
+    {
+      "id": 1,
+      "firstname": "dark",
+      "name": "vador"
+    },
+    {
+      "id": 2,
+      "firstname": "barbe",
+      "name": "bleue"
+    },
+    {
+      "id": 3,
+      "firstname": "freddy",
+      "name": "kruger"
+    }
+  ]
+}
