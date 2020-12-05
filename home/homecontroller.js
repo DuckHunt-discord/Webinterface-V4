@@ -78,10 +78,7 @@ myApp.controller('HomeController', ["$scope", "$state", "$http", "sampleFactory"
 
       $http({
         method: 'GET',
-        url: 'http://f0dc2044b4e6.ngrok.io/api/channels/734880436789968998/top',
-        headers:{
-        "Access-Control-Allow-Origin": "*",
-        }
+        url: 'https://f0dc2044b4e6.ngrok.io/api/channels/734880436789968998/top',
 
       }).then(function successCallback(response) {
        // response.setHeader("Access-Control-Allow-Origin", "*");
