@@ -5,11 +5,9 @@
 
     <h2><b>Summary</b></h2>
   <p style="font-size: 12px;"> 
-    DuckHunt is tracking hunter statistics for <i>4915</i> players in #🦆tests
+    DuckHunt is tracking hunter statistics for <i>{{ players.length }}</i> players in #{{ channel_info.name }}
   </p>
   <h2><b>Raw scores</b></h2>
- 
-  
     <table class="table table-bordered-sm  table-light"  style="font-size: 12px;"> 
       <thead class="thead-dark">
         <tr>
@@ -22,34 +20,16 @@
           <th scope="col">Best time</th>
         </tr>
       </thead>
+
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-         
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
+        <tr ng-repeat="player in players">
+          <th scope="row">{{ player.user_name }}#{{ player.user_discriminator }}</th>
+          <td>{{ player.experience }}</td>
+          <td>{{ player.killed_total }}</td>
+          <td>A FAIRE</td>
+          <td>A FAIRE</td>
+          <td>A FAIRE</td>
+          <td>A FAIRE</td>
         </tr>
       </tbody>
     </table>
