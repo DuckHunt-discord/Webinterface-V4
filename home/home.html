@@ -21,19 +21,19 @@
           <th scope="col">Ratio (exp/ducks_killed)</th>
           <th scope="col">Super Ducks Killed</th>
           <th scope="col">Shots fired</th>
-          <th scope="col">Best time</th>
+          <th scope="col">Best time (normal)</th>
         </tr>
       </thead>
 
       <tbody>
         <tr ng-repeat="player in players">
-          <th scope="row"><a ng-click="getPlayer(player.user_id)" > {{ player.user_id }}#{{ player.user_discriminator }}></a></th>
+          <th scope="row"><a ng-click="getPlayer(player.user_id)" > {{ player.user_name }}#{{ player.user_discriminator }}</a></th>
           <td>{{ player.experience }}</td>
           <td>{{ player.killed_total }}</td>
+          <td>{{ player.experience / player.killed_total }}</td>
+          <td>{{ player.killed.super }}</td>
           <td>A FAIRE</td>
-          <td>A FAIRE</td>
-          <td>A FAIRE</td>
-          <td>A FAIRE</td>
+          <td>{{ player.best_times.normal }}</td>
         </tr>
       </tbody>
     </table>
