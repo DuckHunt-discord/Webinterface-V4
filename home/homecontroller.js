@@ -31,6 +31,7 @@ myApp.controller('HomeController', ["$scope", "$state", "$http", "sampleFactory"
 
         console.log('get1 ok');
         $scope.players = response.data;
+       
         console.log(response.data)
       }, function errorCallback(response) {
 

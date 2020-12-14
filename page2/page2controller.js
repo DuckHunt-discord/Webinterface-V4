@@ -27,7 +27,7 @@ console.log("id:"+ $state.params.myParameter);
 
 
 
-    $http({
+   $http({
       method: 'GET',
       url: 'https://v4.duckhunt.me/api/channels/734880436789968998/player/'+$state.params.myParameter,  
     }).then(function successCallback(response) {
