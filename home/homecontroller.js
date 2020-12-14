@@ -1,122 +1,52 @@
-/*myApp.controller('HomeController', ["$scope", "$state", "$http", "sampleFactory",
-
-  function($scope, $state, $http, sampleFactory) {
-
-    console.log('this is the homecontroller, hi!');
-
-    var getStudents = function() {
-      $http({
-        method: 'GET',
-        url: 'http://localhost:3000/students'
-      }).then(function successCallback(response) {
-          // this callback will be called asynchronously
-          // when the response is available
-          console.log('get ok');
-          $scope.students = response.data;
-      }, function errorCallback(response) {
-          // called asynchronously if an error occurs
-          // or server returns response with an error status.
-          console.log('get nok');
-      });
-    }
 
 
-    $scope.addStudent = function() {
+myApp.controller('HomeController', ["$scope", "$state", "$http", "sampleFactory", "$stateParams",
 
-      var studentObject = {
-        firstname: $scope.forename,
-        name: $scope.name
-      };
-
-      $http.post('http://localhost:3000/students', studentObject)
-      .then(function successCallback(response) {
-          // this callback will be called asynchronously
-          // when the response is available
-          console.log('add ok');
-          getStudents();
-        }, function errorCallback(response) {
-          // called asynchronously if an error occurs
-          // or server returns response with an error status.
-          console.log('add nok');
-        });
-    }
+  function ($scope, $state, $http, sampleFactory, $stateParams) {
 
 
-    $scope.removeStudent = function(i) {
-
-      console.log("i=" + i);
-      var id = $scope.students[i].id;
-      console.log("id=" + id);
-
-      $http.delete('http://localhost:3000/students/' + id)
-      .then(function successCallback(response) {
-          // this callback will be called asynchronously
-          // when the response is available
-          console.log('delete ok');
-          getStudents();
-        }, function errorCallback(response) {
-          // called asynchronously if an error occurs
-          // or server returns response with an error status.
-          console.log('delete nok');
-        });
 
 
-    }
-
-    getStudents();
-
-  }
-]);*/
+    $scope.getPlayer = function (id) {
 
 
-myApp.controller('HomeController', ["$scope", "$state", "$http", "sampleFactory",
 
-  function($scope, $state, $http, sampleFactory) {
+      var param = { myParameter: id };
 
-    console.log('this is the homecontroller, hi!');
+
+      $state.go("page2", param);
+
+
+    },
+
+
+
 
 
       $http({
         method: 'GET',
-        url: 'https://f0dc2044b4e6.ngrok.io/api/channels/734880436789968998/top',
+        url: 'https://v4.duckhunt.me/api/channels/734880436789968998/top',
 
       }).then(function successCallback(response) {
-       // response.setHeader("Access-Control-Allow-Origin", "*");
-   
-  
-          // this callback will be called asynchronously
-          // when the response is available
-          console.log('get1 ok');
-          $scope.players = response.data;
-          console.log(response.data)
+
+        console.log('get1 ok');
+        $scope.players = response.data;
+        console.log(response.data)
       }, function errorCallback(response) {
-       // response.setHeader("Access-Control-Allow-Origin", "*");
-   
-          // called asynchronously if an error occurs
-          // or server returns response with an error status.
-          console.log('get1 nok');
+
+        console.log('get1 nok');
       });
 
-      $http({
-        method: 'GET',
-        url: 'https://f0dc2044b4e6.ngrok.io/api/channels/734880436789968998',
-
-      }).then(function successCallback(response) {
-       // response.setHeader("Access-Control-Allow-Origin", "*");
 
 
-          // this callback will be called asynchronously
-          // when the response is available
-          console.log('get2 ok');
-          $scope.channel_info = response.data;
-          console.log(response.data)
-      }, function errorCallback(response) {
-       // response.setHeader("Access-Control-Allow-Origin", "*");
 
-          // called asynchronously if an error occurs
-          // or server returns response with an error status.
-          console.log('get2 nok');
-      });
-    
-  }
+
+
+
+
+
+  },
+
+
+
 ]);
