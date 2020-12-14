@@ -32,7 +32,7 @@
           <td>{{ player.killed_total || 0}}</td>
           <td>{{ player.experience / player.killed_total || 0}}</td>
           <td>{{ player.killed.super || 0}}</td>
-          <td>A FAIRE</td>
+          <td>{{ player.shooting_stats.bullets_used || 0 }}</td>
           <td>{{ player.best_times.normal || 660 }}</td>
         </tr>
       </tbody>
