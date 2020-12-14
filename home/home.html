@@ -33,7 +33,7 @@
           <td>{{ player.experience / player.killed_total || 0}}</td>
           <td>{{ player.killed.super || 0}}</td>
           <td>{{ player.shooting_stats.bullets_used || 0 }}</td>
-          <td>{{ player.best_times.normal || 660 }}</td>
+          <td>{{ player.best_times.normal || 660 | number }}</td>
         </tr>
       </tbody>
     </table>
