@@ -28,12 +28,12 @@
       <tbody>
         <tr ng-repeat="player in players">
           <th scope="row"><a ng-click="getPlayer(player.user_id)" > {{ player.user_name }}#{{ player.user_discriminator }}</a></th>
-          <td>{{ player.experience }}</td>
-          <td>{{ player.killed_total }}</td>
-          <td>{{ player.experience / player.killed_total }}</td>
-          <td>{{ player.killed.super }}</td>
+          <td>{{ player.experience || 0}}</td>
+          <td>{{ player.killed_total || 0}}</td>
+          <td>{{ player.experience / player.killed_total || 0}}</td>
+          <td>{{ player.killed.super || 0}}</td>
           <td>A FAIRE</td>
-          <td>{{ player.best_times.normal }}</td>
+          <td>{{ player.best_times.normal || 660 }}</td>
         </tr>
       </tbody>
     </table>
