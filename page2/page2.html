@@ -117,6 +117,7 @@
 
 
     <script>
+        console.log("player.best_times.super" +  player.best_times.super);
         Highcharts.setOptions({
             chart: {
                 plotBackgroundColor: null,
@@ -202,7 +203,7 @@
             series: [{
                 name: 'Best Times',
                 colorByPoint: true,
-                data: [{"name":  "player.best_times.super", "y": 149.07509446144104, "sliced": true, "selected": true}, {"name": "Prof", "y": 69.48741102218628}, {"name": "Baby", "y": 28.140064477920532}, {"name": "Normal", "y": 5.7614264488220215}],
+                data: [{"name":  "Super", "y": "player.best_times.super", "sliced": true, "selected": true}, {"name": "Prof", "y": 69.48741102218628}, {"name": "Baby", "y": 28.140064477920532}, {"name": "Normal", "y": 5.7614264488220215}],
                 dataLabels: {
                     enabled: true,
                     format: '{point.name}: {point.y:.1f}s'
