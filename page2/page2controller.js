@@ -32,9 +32,9 @@ console.log("id:"+ $state.params.myParameter);
       url: 'https://v4.duckhunt.me/api/channels/734880436789968998/player/'+$state.params.myParameter,  
     }).then(function successCallback(response) {
   
-      console.log('get1 ok');
+      console.log('Control 2 ok');
       $scope.player = response.data;
-     
+    
     }, function errorCallback(response) {
   
       console.log('get1 nok');
