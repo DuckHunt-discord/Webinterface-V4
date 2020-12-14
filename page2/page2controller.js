@@ -33,8 +33,8 @@ console.log("id:"+ $state.params.myParameter);
     }).then(function successCallback(response) {
   
       console.log('get1 ok');
-      $scope.players = response.data;
-      console.log(response.data)
+      $scope.player = response.data;
+     
     }, function errorCallback(response) {
   
       console.log('get1 nok');

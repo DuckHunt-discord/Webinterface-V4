@@ -1,13 +1,229 @@
+<div class="background-light" ng-controller="Page2Controller">
+    <nav class="navbar navbar-expand-lg navbar-light" >
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">DuckHunt Discord V4</a>
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                
+                <div class="d-flex">
+                    <!-- Other side -->
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container ">
+        
+    <h1>{{ player.user_name }}#{{ player.user_discriminator }}  statistics on #testing</h1>
+
+    <h2>General statistics</h2>
+
+    <p>
+        <span class="statistic">0</span> days played,
+        <span class="statistic">{{player.experience}}</span> experience points.
+    </p>
+
+    <h2>Achievements</h2>
+
+    <ul>
+  
+        
+    </ul>
+
+    
 
 
-<div class="w3-margin" ng-controller="Page2Controller">
+    
+        <h2>Ducks killed</h2>
+        <div id="chart-ducks-killed"></div>
+    
 
-  <br>
-  <p>This is the <i>page2</i> page.</p>
+    <h2>Shooting range</h2>
+    <div id="chart-best-times"></div>
 
-  <br><br>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 justify-content-around">
 
-  <button ng-click="gotohome()"
-    type="button" class="w3-btn w3-red w3-round-small">Go back to home!</button>
+        
+            <div class="col">
+                <h2>Ducks hugged</h2>
+                <div id="chart-ducks-hugged"></div>
+            </div>
+        
+
+        
+
+        
+    </div>
+
+
+
+    
+    <h2>Backpack</h2>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 justify-content-around">
+        <div class="card text-dark col">
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                    <tr style="border-bottom: hidden;">
+                        <th colspan="2" class="text-center h4">DuckHunt Shop<br/><br/><br/></th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <span class="text-muted fw-lighter">Invoice No.</span><br/>
+                            <span class="fw-lighter fs-6">592776625486299136</span><br/><br/>
+                        </th>
+                        <th class="text-end">
+                            <span class="text-muted fw-lighter">Payment Date.</span><br/>
+                            <span class="fw-lighter fs-6">Dec. 14, 2020</span><br/><br/>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    
+                    
+                    
+                    
+                        <tr>
+                            <td>Sight</td>
+                            <td class="text-end">9 shots</td>
+                        </tr>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    </tbody>
+                    <tfoot>
+              
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+       
+    </div>
+
+    <h2>Shooting stats</h2>
+
+    defaultdict(&lt;class &#39;int&#39;&gt;, {&#39;killed&#39;: 1, &#39;missed&#39;: 3, &#39;reloads&#39;: 1, &#39;suicides&#39;: 1, &#39;got_killed&#39;: 1, &#39;bullets_used&#39;: 11, &#39;shots_with_duck&#39;: 1, &#39;unneeded_reloads&#39;: 1, &#39;shots_when_jammed&#39;: 1, &#39;shots_jamming_weapon&#39;: 3, &#39;shots_with_empty_magazine&#39;: 1})
+
+
+    <h2>Misc</h2>
+
+    2 bullets in gun, 2 magazines in backpack.
+
+
+    <script>
+        Highcharts.setOptions({
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie'
+            },
+            title: {
+                text: ''
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                    }
+                }
+            },
+        });
+        
+            Highcharts.chart('chart-ducks-killed', {
+                tooltip: {
+                    pointFormat: 'Killed: {point.y} (<b>{point.percentage:.1f}%</b>)'
+                },
+                series: [{
+                    name: 'Killed',
+                    colorByPoint: true,
+                    data: [{"name": "Normal", "y": 2, "sliced": true, "selected": true}, {"name": "Prof", "y": 1}, {"name": "Super", "y": 1}]
+                }]
+            });
+        
+
+        
+            Highcharts.chart('chart-ducks-hugged', {
+                tooltip: {
+                    pointFormat: 'Hugged: {point.y} (<b>{point.percentage:.1f}%</b>)'
+                },
+                series: [{
+                    name: 'Hugged',
+                    colorByPoint: true,
+                    data: [{"name": "Baby", "y": 1, "sliced": true, "selected": true}]
+                }]
+            });
+        
+
+        
+
+        
+
+        Highcharts.chart('chart-best-times', {
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: 'Best times'
+            },
+            yAxis: {
+                title: {
+                    text: 'Time to kill (seconds)',
+                    align: 'high'
+                },
+            },
+            xAxis: {
+                labels: {
+                    enabled: false,
+                }
+            },
+            tooltip: {
+                valueSuffix: ' seconds'
+            },
+            plotOptions: {
+                bar: {
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            legend: {
+                enabled: false
+            },
+            series: [{
+                name: 'Best Times',
+                colorByPoint: true,
+                data: [{"name":  "player.best_times.super", "y": 149.07509446144104, "sliced": true, "selected": true}, {"name": "Prof", "y": 69.48741102218628}, {"name": "Baby", "y": 28.140064477920532}, {"name": "Normal", "y": 5.7614264488220215}],
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}: {point.y:.1f}s'
+                }
+            }]
+        });
+    </script>
+        <script>
+            Highcharts.setOptions({
+                credits: false,
+                chart: {
+                    backgroundColor: '#2f3136',
+                    borderWidth: 0,
+                    plotBackgroundColor: '#202225',
+                    plotShadow: true,
+                    plotBorderWidth: 1
+                }
+            });
+        </script>
+
+    </div>
+  
 
 </div>

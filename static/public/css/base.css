@@ -1,0 +1,24 @@
+.background-light {
+    background-color: #36393f !important;
+}
+
+.background-normal {
+    background-color: #2f3136 !important;
+}
+
+.background-dark {
+    background-color: #202225 !important;
+}
+
+.background-green {
+    background-color: #0c4128 !important;
+}
+
+h2{
+    padding-top: 0.7em !important;
+}
+
+nav {
+    background-color: #0d71b0;
+    color: #99AAB5 !important;
+}

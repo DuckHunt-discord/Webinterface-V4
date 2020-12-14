@@ -21,6 +21,27 @@ myApp.controller('HomeController', ["$scope", "$state", "$http", "sampleFactory"
 
 
 
+        $http({
+          method: 'GET',
+          url: 'https://v4.duckhunt.me/api/channels/734880436789968998',
+
+        }).then(function successCallback(response) {
+          // response.setHeader("Access-Control-Allow-Origin", "*");
+
+
+          // this callback will be called asynchronously
+          // when the response is available
+          console.log('get2 ok');
+          $scope.channel_info = response.data;
+          console.log(response.data)
+        }, function errorCallback(response) {
+          // response.setHeader("Access-Control-Allow-Origin", "*");
+
+          // called asynchronously if an error occurs
+          // or server returns response with an error status.
+          console.log('get2 nok');
+        });
+
 
 
       $http({
