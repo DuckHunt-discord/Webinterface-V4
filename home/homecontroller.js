@@ -32,20 +32,5 @@ myApp.controller('HomeController', ["$scope", "$state", "$http", "sampleFactory"
         }, function errorCallback(response) {
             console.log('get1 nok');
         });
-
-
-
-
-
-
-
-
-
-
-
-  },
-
-
-
-
+    },
 ]);

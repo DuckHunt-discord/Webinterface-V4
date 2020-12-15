@@ -1,46 +1,39 @@
-
 <body ng-app="myApp">
 
 <div class="w3-container" ng-controller="HomeController">
 
     <h2><b>Summary</b></h2>
- 
 
 
-
-  <p style="font-size: 12px;"> 
-    DuckHunt is tracking hunter statistics for <i>{{ players.length }}</i> players in #{{ channel_info.name }}
-  </p>
-  <h2><b>Raw scores</b></h2>
-    <table class="table table-bordered-sm  table-light"  style="font-size: 12px;"> 
-      <thead class="thead-dark">
+    <p style="font-size: 12px;">
+        DuckHunt is tracking hunter statistics for <i>{{ players.length }}</i> players in #{{ channel_info.name }}
+    </p>
+    <h2><b>Raw scores</b></h2>
+    <table class="table table-bordered-sm  table-light" style="font-size: 12px;">
+        <thead class="thead-dark">
         <tr>
-          <th scope="col">Name </th>
-          <th scope="col">Exp</th>
-          <th scope="col">Ducks Killed</th>
-          <th scope="col">Ratio (exp/ducks_killed)</th>
-          <th scope="col">Super Ducks Killed</th>
-          <th scope="col">Shots fired</th>
-          <th scope="col">Best time (normal)</th>
+            <th scope="col">Name</th>
+            <th scope="col">Exp</th>
+            <th scope="col">Ducks Killed</th>
+            <th scope="col">Ratio (exp/ducks_killed)</th>
+            <th scope="col">Super Ducks Killed</th>
+            <th scope="col">Shots fired</th>
+            <th scope="col">Best time (normal)</th>
         </tr>
-      </thead>
+        </thead>
 
-      <tbody>
+        <tbody>
         <tr ng-repeat="player in players">
-          <th scope="row"><a ng-click="getPlayer(player.user_id)">{{ player.user_name }}#{{ player.user_discriminator }}</a></th>
-          <td>{{ player.experience || 0}}</td>
-          <td>{{ player.killed_total || 0}}</td>
-          <td>{{ (player.experience / player.killed_total) || 0 | number  }}</td>
-          <td>{{ player.killed.super || 0}}</td>
-          <td>{{ player.shooting_stats.bullets_used || 0 }}</td>
-          <td>{{ player.best_times.normal || 660 | number }}</td>
+            <th scope="row"><a ng-click="getPlayer(player.user_id)">{{ player.user_name }}#{{ player.user_discriminator
+                }}</a></th>
+            <td>{{ player.experience || 0}}</td>
+            <td>{{ player.killed_total || 0}}</td>
+            <td>{{ (player.experience / player.killed_total) || 0 | number }}</td>
+            <td>{{ player.killed.super || 0}}</td>
+            <td>{{ player.shooting_stats.bullets_used || 0 }}</td>
+            <td>{{ player.best_times.normal || 660 | number }}</td>
         </tr>
-      </tbody>
+        </tbody>
     </table>
-    
-   
-  
-  
-  </div>
-
+</div>
 </body>
